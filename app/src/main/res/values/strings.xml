@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">UVCE Connect</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Open</string>
+    <string name="title_activity_test">test</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_drawer">Dashboard</string>
+    <string name="title_activity_about_uvce">about_uvce</string>
+    <string name="large_text">
+       "University Visvesvaraya College of Engineering (UVCE) was established in 1917, under the name Government Engineering College, by Bharat Ratna Sir M. Visvesvaraya, and was then affiliated to Bangalore University."
+        "It is the fifth engineering college to be established in the country."
+        "UVCE is a constituent college of Bangalore University which gives it a special status of a university."
+        "UVCE is one of the few technical institutions in the country that is vested with the status of a university."
+        "It is one of the oldest technical institutions in the country, imparting technical education leading to B.E, B.Arch, M.E, M.Arch and PhD degrees in the various disciplines of Engineering and Architecture."
+        "The college is approved by the AICTE and the Government of Karnataka."
+        "The departments are accredited with five A+ for three years by the National Board of Accreditation, New Delhi. UVCE has a NAAC rating of five stars for the past four consecutive years."
+        "The college receives financial aid under the TEQIP program from the World Bank."
+    </string>
+
+    <string name="quickstart_message">Click the SUBSCRIBE TO NEWS button below to subscribe to the
+        news topic. Messages sent to the news topic will be received. The LOG TOKEN button logs the
+        InstanceID token to logcat.</string>
+    <string name="subscribe_to_news">Subscribe To News</string>
+    <string name="log_token">Log Token</string>
+
+    <string name="msg_subscribed">Subscribed to news topic</string>
+    <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>
+
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <!--
+            This is the name that users will see when interacting with this channel.
+            It should describe the category of notifications that will be sent through this channel
+         -->
+    <string name="default_notification_channel_name" translatable="true">News</string>
+    <string name="msg_subscribe_failed">Failed to subscribe to news topic</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
+

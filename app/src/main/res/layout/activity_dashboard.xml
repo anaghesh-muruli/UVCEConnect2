@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#dcd7d7"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:id="@+id/drawer"
+    tools:context=".Dashboard">
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/back" />
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"></RelativeLayout>
+    <ImageView
+        android:id="@+id/news"
+        android:layout_width="167dp"
+        android:layout_height="167dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="213dp"
+        android:src="@drawable/news" />
+
+    <ImageView
+        android:id="@+id/community"
+        android:layout_width="167dp"
+        android:layout_height="167dp"
+        android:layout_alignTop="@+id/news"
+        android:layout_toEndOf="@+id/news"
+        android:src="@drawable/community" />
+
+    <ImageView
+        android:id="@+id/acadamics"
+        android:layout_width="167dp"
+        android:layout_height="167dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/news"
+        android:layout_marginBottom="128dp"
+        android:src="@drawable/academics" />
+
+    <ImageView
+        android:id="@+id/fests"
+        android:layout_width="167dp"
+        android:layout_height="167dp"
+        android:layout_alignTop="@+id/acadamics"
+        android:layout_toEndOf="@+id/news"
+        android:src="@drawable/fests" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="match_parent"
+        android:layout_height="102dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        app:srcCompat="@drawable/uvcelatest" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="127dp"
+        android:fontFamily="@font/segoeuil"
+        android:text="Hi, Anaghesh!"
+        android:textColor="#dfdede"
+        android:textSize="35sp"
+        android:id="@+id/welcomename"/>
+</RelativeLayout>
