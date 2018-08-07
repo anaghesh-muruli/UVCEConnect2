@@ -6,6 +6,7 @@ import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
@@ -13,19 +14,28 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Drawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private FrameLayout frameLayout;
-
-    FirebaseAuth firebaseAuth;
+    private TextView userName;
+    private FirebaseAuth firebaseAuth;
+    private FirebaseDatabase firebaseDatabase;
     private ImageView news,community,academics,fests;
 
     @Override
@@ -36,6 +46,27 @@ public class Drawer extends AppCompatActivity
         frameLayout = findViewById(R.id.homr_fragment);
         setSupportActionBar(toolbar);
         setupUI();
+
+        userName = findViewById(R.id.welcomename);
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference ref = firebaseDatabase.getReference(firebaseAuth.getUid());
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Userprofile userprofile = dataSnapshot.getValue(Userprofile.class);
+                Log.e("user",""+userprofile.getprofileName());
+                userName.setText(userprofile.getprofileName());
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(Drawer.this, ""+databaseError, Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
         news = findViewById(R.id.news);
 
