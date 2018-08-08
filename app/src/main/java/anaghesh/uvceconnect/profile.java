@@ -18,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class profile extends AppCompatActivity {
-    private TextView profileName, profileemail, profileUSN, profileBranch;
+    private TextView profileName, profileemail, profileUSN, profileBranch,profileYear;
     private Button logout;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
@@ -47,6 +47,7 @@ public class profile extends AppCompatActivity {
                 profileemail.setText(userprofile.getprofileEmailid());
                 profileUSN.setText(userprofile.getprofileUSN());
                 profileBranch.setText(userprofile.getProfileBranch());
+                profileYear.setText(userprofile.getProfileYear());
                 Log.e("branch",""+signup.branch1);
                 progressDialog.dismiss();
             }
@@ -71,5 +72,6 @@ public class profile extends AppCompatActivity {
         profileemail = findViewById(R.id.profileemail);
         profileBranch = findViewById(R.id.profilebranch);
         logout = findViewById(R.id.button);
+        profileYear = findViewById(R.id.year);
     }
 }
