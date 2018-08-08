@@ -5,10 +5,19 @@ public class Userprofile {
     private String profileUSN;
     private String profileEmailid;
     private String profileBranch;
+    private String profileYear;
 
     public Userprofile(){
 
     }
+    public String getProfileYear() {
+        return profileYear;
+    }
+
+    public void setProfileYear(String name) {
+        profileYear = name;
+    }
+
     public String getProfileBranch() {
         return profileBranch;
     }
@@ -41,11 +50,12 @@ public class Userprofile {
         profileEmailid = email;
     }
 
-    public Userprofile(String userName, String USN, String userEmail, String branch) {
+    public Userprofile(String userName, String USN, String userEmail, String branch, String year) {
         this.profileName = userName;
         this.profileUSN = USN;
         this.profileEmailid = userEmail;
         this.profileBranch = branch;
+        this.profileYear = year;
 
     }
 

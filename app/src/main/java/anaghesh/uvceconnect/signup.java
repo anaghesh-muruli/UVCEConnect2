@@ -24,6 +24,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class signup extends AppCompatActivity {
     private TextView already_reg,warn,invalid_em;
     private Button register;
@@ -31,7 +35,7 @@ public class signup extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
     String uname,pass,emailid,usnid;
-    public static String branch1;
+    public static String branch1, dispYear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,12 +132,14 @@ public class signup extends AppCompatActivity {
             result = true;
         return result;
     }
+
     private void sendData()
     {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myref = firebaseDatabase.getReference(firebaseAuth.getUid());
         branchfinder();
-        Userprofile userprofile = new Userprofile(uname,usnid,emailid,branch1);
+        yearFinder();
+        Userprofile userprofile = new Userprofile(uname,usnid,emailid,branch1, dispYear );
         myref.setValue(userprofile);
     }
     public boolean isConnected(Context context) {
@@ -193,5 +199,22 @@ public class signup extends AppCompatActivity {
 
 
         }
+        public  void yearFinder(){
+            int year,usnYear;
+            String usn = usnid.substring(1,3);
+            usnYear = Integer.parseInt(usn);
+            String date = new SimpleDateFormat("yyyyMM", Locale.getDefault()).format(new Date());
+            int current = Integer.parseInt(date);
+            year = current - usnYear;
+
+            if(year >=0 && year <100)
+                dispYear = "1st year";
+            else if(year >=100 && year <200)
+                dispYear = "2st year";
+            else if(year >=200 && year <300)
+                dispYear = "3st year";
+            else
+                dispYear = "4th year";
     }
+}
 

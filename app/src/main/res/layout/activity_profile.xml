@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/name"
-        android:layout_marginBottom="207dp"
+        android:layout_marginBottom="202dp"
         android:text="Branch"
         android:textColor="#4986c2" />
 
@@ -88,9 +88,9 @@
         android:id="@+id/profilebranch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/name"
-        android:layout_below="@+id/branch"
-        android:layout_marginTop="-207dp"
+        android:layout_marginBottom="168dp"
         android:text="Branch"
         android:textSize="20sp" />
 

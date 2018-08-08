@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".Acadamics">
 
+    <iframe style="border: none;" android:src="https://cards.uplabs.com/cards/22785/post?v=1" android:width="480" android:height="500" android:frameborder="0" android:scrolling="no"
+        android:allowfullscreen="true">
 
+    </iframe>
 
 </RelativeLayout>
