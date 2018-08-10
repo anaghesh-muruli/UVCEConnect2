@@ -39,6 +39,7 @@ public class signup extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.e("Activity","signup started");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         if(!isConnected(signup.this)) buildDialog(signup.this).show();
@@ -69,7 +70,7 @@ public class signup extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
                             sendData();
-                            Log.e("Branch",""+branch1);
+                            Log.e("Database","Upload successful");
                             progressDialog.dismiss();
                             Toast.makeText(signup.this, "Registration Successful", Toast.LENGTH_SHORT).show();
                             Log.e("Success","Registration Done");
@@ -105,12 +106,12 @@ public class signup extends AppCompatActivity {
     private Boolean validate(){
         Boolean result = false;
         boolean bool,bool1;
-        Log.e("name1",""+name);
+
          uname = name.getText().toString().trim();
-        Log.e("username",""+uname);
+
 
          pass = pword.getText().toString().trim();
-        Log.e("password",""+pass);
+
 
          emailid = email.getText().toString().trim();
         CharSequence seq = "@";
@@ -135,6 +136,7 @@ public class signup extends AppCompatActivity {
 
     private void sendData()
     {
+        Log.e("Method","sendData");
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myref = firebaseDatabase.getReference(firebaseAuth.getUid());
         branchfinder();
@@ -174,6 +176,7 @@ public class signup extends AppCompatActivity {
         return builder;
     }
     public void branchfinder(){
+        Log.e("method","branchfinder");
 
         String branch = usnid.substring(4,7);
         if(branch.equalsIgnoreCase("EI6")){
@@ -200,9 +203,11 @@ public class signup extends AppCompatActivity {
 
         }
         public  void yearFinder(){
+            Log.e("method","yearfinder");
             int year,usnYear;
-            String usn = usnid.substring(1,3);
-            usnYear = Integer.parseInt(usn);
+            String usn = usnid.substring(0,2);
+            String joiningDate = "20"+usn+"08";
+            usnYear = Integer.parseInt(joiningDate);
             String date = new SimpleDateFormat("yyyyMM", Locale.getDefault()).format(new Date());
             int current = Integer.parseInt(date);
             year = current - usnYear;
@@ -210,11 +215,12 @@ public class signup extends AppCompatActivity {
             if(year >=0 && year <100)
                 dispYear = "1st year";
             else if(year >=100 && year <200)
-                dispYear = "2st year";
+                dispYear = "2nd year";
             else if(year >=200 && year <300)
-                dispYear = "3st year";
+                dispYear = "3rd year";
             else
                 dispYear = "4th year";
+            Log.e("disp",""+dispYear);
     }
 }
 

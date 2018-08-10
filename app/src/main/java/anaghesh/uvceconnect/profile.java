@@ -43,6 +43,7 @@ public class profile extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Userprofile userprofile = dataSnapshot.getValue(Userprofile.class);
+
                 profileName.setText(userprofile.getprofileName());
                 profileemail.setText(userprofile.getprofileEmailid());
                 profileUSN.setText(userprofile.getprofileUSN());
