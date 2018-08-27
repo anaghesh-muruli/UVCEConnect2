@@ -13,6 +13,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+/* created by Anaghesh on 23-07-2018
+*   gitHub repo: UVCEConnect2    */
+
 public class MainActivity extends AppCompatActivity {
  private Button login,signup;
  private ImageView uvce;
