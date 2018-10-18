@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,68 +8,108 @@
     android:fitsSystemWindows="true"
     android:id="@+id/drawer"
     tools:context=".Dashboard">
+
     <ImageView
         android:id="@+id/imageView11"
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/back" />
-<RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"></RelativeLayout>
-    <ImageView
-        android:id="@+id/news"
-        android:layout_width="167dp"
-        android:layout_height="167dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="213dp"
-        android:src="@drawable/news" />
-
-    <ImageView
-        android:id="@+id/community"
-        android:layout_width="167dp"
-        android:layout_height="167dp"
-        android:layout_alignTop="@+id/news"
-        android:layout_toEndOf="@+id/news"
-        android:src="@drawable/community" />
-
-    <ImageView
-        android:id="@+id/acadamics"
-        android:layout_width="167dp"
-        android:layout_height="167dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/news"
-        android:layout_marginBottom="128dp"
-        android:src="@drawable/academics" />
-
-    <ImageView
-        android:id="@+id/fests"
-        android:layout_width="167dp"
-        android:layout_height="167dp"
-        android:layout_alignTop="@+id/acadamics"
-        android:layout_toEndOf="@+id/news"
-        android:src="@drawable/fests" />
 
     <ImageView
         android:id="@+id/imageView15"
-        android:layout_width="match_parent"
+        android:layout_width="417dp"
         android:layout_height="102dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/uvcelatest" />
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="349dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomename">
+
+        <ImageView
+            android:id="@+id/community"
+            android:layout_width="167dp"
+            android:layout_height="167dp"
+            android:layout_alignTop="@+id/news"
+            android:layout_marginBottom="28dp"
+            android:layout_toEndOf="@+id/news"
+            android:src="@drawable/community"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/news"
+            android:layout_width="167dp"
+            android:layout_height="167dp"
+
+            android:layout_marginBottom="28dp"
+            android:src="@drawable/news"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/community" />
+
+        <ImageView
+            android:id="@+id/acadamics"
+            android:layout_width="167dp"
+            android:layout_height="167dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/academics"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/fests"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/fests"
+            android:layout_width="167dp"
+            android:layout_height="167dp"
+            android:layout_alignTop="@+id/acadamics"
+            android:layout_toEndOf="@+id/news"
+            android:src="@drawable/fests"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
     <TextView
+        android:id="@+id/welcomename"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="127dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/segoeuil"
         android:text="Hi, Anaghesh!"
         android:textColor="#dfdede"
         android:textSize="35sp"
-        android:id="@+id/welcomename"/>
-</RelativeLayout>
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView11" />
+
+</android.support.constraint.ConstraintLayout>
